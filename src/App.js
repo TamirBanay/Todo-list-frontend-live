@@ -5,6 +5,7 @@ import {
   Route,
   Navigate,
   useParams,
+  HashRouter,
 } from "react-router-dom";
 import Home from "./pages/home/HomePage";
 import Login from "./pages/login/LoginPage";
@@ -19,7 +20,7 @@ function App() {
 
   return (
     <div className="App">
-      <Router basename="/Todo-list-frontend-live">
+      <HashRouter>
         <Routes>
           <Route path="/" element={<Navigate to="/home" />} />
           <Route path="/home" element={<Home />} />
@@ -27,7 +28,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/:currentUserId/todo" element={<Todo />} />
         </Routes>
-      </Router>
+      </HashRouter>
     </div>
   );
 }
