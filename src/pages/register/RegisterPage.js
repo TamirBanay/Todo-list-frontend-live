@@ -1,8 +1,9 @@
 import React from "react";
 import logInImag from "../../images/Done.png";
 import { useEffect, useState } from "react";
+
 import "./Register.css";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 function RegisterPage() {
   const [username, setUsername] = useState("");
@@ -10,10 +11,6 @@ function RegisterPage() {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const navigate = useNavigate();
-
-  const moveToLogin = () => {
-    window.location.href = "/login";
-  };
 
   const registerHandler = () => {
     fetch("https://my-todo-app-new-9ccea1147719.herokuapp.com/users/register", {
@@ -72,11 +69,7 @@ function RegisterPage() {
         </button>
       </div>
       <div className="moveToLogin">
-        Already have an account ?
-        <span onClick={moveToLogin} className="secTextSignUp">
-          {" "}
-          Sign In
-        </span>
+        Already have an account ?<Link to="/login"> Sign In</Link>
       </div>
     </div>
   );
