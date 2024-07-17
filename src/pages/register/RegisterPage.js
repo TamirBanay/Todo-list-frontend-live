@@ -16,7 +16,7 @@ function RegisterPage() {
   };
 
   const registerHandler = () => {
-    fetch("http://localhost:3000/users/register", {
+    fetch("https://my-todo-app-new-9ccea1147719.herokuapp.com/users/register", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

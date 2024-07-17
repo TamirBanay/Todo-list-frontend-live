@@ -61,7 +61,7 @@ function Todo() {
       )
     );
 
-    fetch(`http://localhost:3000/todos/todoIsDone/${todoId}`, {
+    fetch(`https://my-todo-app-new-9ccea1147719.herokuapp.com/todos/todoIsDone/${todoId}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -87,7 +87,7 @@ function Todo() {
   const deleteTodo = async (todoId) => {
     try {
       const response = await fetch(
-        `http://localhost:3000/todos/deleteTodo/${todoId}`,
+        `https://my-todo-app-new-9ccea1147719.herokuapp.com/todos/deleteTodo/${todoId}`,
         {
           method: "DELETE",
         }
@@ -108,7 +108,7 @@ function Todo() {
 
   const fetchTodos = () => {
     const userId = user.id;
-    fetch(`http://localhost:3000/todos/getTodoOfUser/${userId}`)
+    fetch(`https://my-todo-app-new-9ccea1147719.herokuapp.com/todos/getTodoOfUser/${userId}`)
       .then((response) => response.json())
       .then((data) => setTodos(data))
       .catch((error) => console.error("Error fetching todos:", error));

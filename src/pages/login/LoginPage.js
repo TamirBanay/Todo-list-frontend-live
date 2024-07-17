@@ -19,7 +19,7 @@ function LoginPage() {
   };
 
   const loginHandler = () => {
-    fetch("http://localhost:3000/users/login", {
+    fetch("https://my-todo-app-new-9ccea1147719.herokuapp.com/users/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -27,7 +27,7 @@ function AddTask() {
   };
 
   const handleAddTask = () => {
-    fetch("http://localhost:3000/todos/add", {
+    fetch("https://my-todo-app-new-9ccea1147719.herokuapp.com/todos/add", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
