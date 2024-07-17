@@ -40,37 +40,41 @@ function LoginPage() {
 
   return (
     <div className="main-login">
-      <div className="login-img">
-        <img src={logInImag} />
-      </div>
-      <div className="login-title">
-        Welcome back <br />
-        to <br />
-        <span className="secText"> OUR REMINDER</span>
-      </div>
-      <div className="inputs">
-        <input
-          onChange={(e) => setUsername(e.target.value)}
-          className="login-email"
-          type="email"
-          placeholder="Enter your email"
-        />
-        <input
-          className="login-password"
-          type="password"
-          placeholder="Enter password"
-          onChange={(e) => setPassword(e.target.value)}
-        />
-      </div>
-      <div className="forgotPassword"> Forgot Password</div>
-      <div className="signInButton-div">
-        <button onClick={loginHandler} type="submit" className="signInButton">
-          Sign In
-        </button>
-      </div>
-      <div className="moveToRegister">
-        Don’t have an account ?<Link to="/register">Sign Up</Link>
-      </div>
+      <form>
+        <div className="login-img">
+          <img src={logInImag} />
+        </div>
+        <div className="login-title">
+          Welcome back <br />
+          to <br />
+          <span className="secText"> OUR REMINDER</span>
+        </div>
+        <div className="inputs">
+          <input
+            onChange={(e) => setUsername(e.target.value)}
+            className="login-email"
+            type="email"
+            placeholder="Enter your email"
+            autoComplete="username"
+          />
+          <input
+            className="login-password"
+            type="password"
+            placeholder="Enter password"
+            onChange={(e) => setPassword(e.target.value)}
+            autoComplete="password"
+          />
+        </div>
+        <div className="forgotPassword"> Forgot Password</div>
+        <div className="signInButton-div">
+          <button onClick={loginHandler} type="submit" className="signInButton">
+            Sign In
+          </button>
+        </div>
+        <div className="moveToRegister">
+          Don’t have an account ?<Link to="/register">Sign Up</Link>
+        </div>
+      </form>
     </div>
   );
 }
