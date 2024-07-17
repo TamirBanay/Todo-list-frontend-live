@@ -22,7 +22,7 @@ function App() {
 
   return (
     <div className="App">
-      <Router>
+      <Router basename="/Todo-list-frontend-live">
         <Routes>
           <Route path="/" element={<Navigate to="/home" />} />
           <Route path="/home" element={<Home />} />
