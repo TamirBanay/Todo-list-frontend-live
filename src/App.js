@@ -1,23 +1,20 @@
 import "./App.css";
-// import react from "react";
 import {
   BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
   Routes,
-  useParams,
+  Route,
   Navigate,
+  useParams,
 } from "react-router-dom";
 import Home from "./pages/home/HomePage";
 import Login from "./pages/login/LoginPage";
 import Register from "./pages/register/RegisterPage";
 import Todo from "./pages/todo/TodoPage";
-import { _userIsLoggedIn, _currentUserId, _user } from "./services/atom";
 import { useRecoilState } from "recoil";
+import { _currentUserId } from "./services/atom";
 
 function App() {
-  let { userId } = useParams();
+  const { userId } = useParams();
   const [currentUserId, setCurrentUserId] = useRecoilState(_currentUserId);
 
   return (
@@ -29,8 +26,6 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/:currentUserId/todo" element={<Todo />} />
-
-          {/* Add other routes here */}
         </Routes>
       </Router>
     </div>
