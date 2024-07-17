@@ -14,9 +14,7 @@ function LoginPage() {
   const [userIsLoggedIn, setUserIsLoggedIn] = useRecoilState(_userIsLoggedIn);
   const navigate = useNavigate();
 
-  const moveToRegister = () => {
-    window.location.href = "/register";
-  };
+
 
   const loginHandler = () => {
     fetch("https://my-todo-app-new-9ccea1147719.herokuapp.com/users/login", {
@@ -74,10 +72,9 @@ function LoginPage() {
       </div>
       <div className="moveToRegister">
         Don’t have an account ?
-        <span onClick={moveToRegister} className="secTextSignUp">
-          {" "}
+        <Link to="/register">
           Sign Up
-        </span>
+        </Link>
       </div>
     </div>
   );
