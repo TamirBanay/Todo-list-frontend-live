@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import "./login.css";
 import logInImag from "../../images/Done.png";
 import { useRecoilState } from "recoil";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 import { _userIsLoggedIn, _currentUserId, _user } from "../../services/atom";
 function LoginPage() {
@@ -13,8 +13,6 @@ function LoginPage() {
   const [currentUserId, setCurrentUserId] = useRecoilState(_currentUserId);
   const [userIsLoggedIn, setUserIsLoggedIn] = useRecoilState(_userIsLoggedIn);
   const navigate = useNavigate();
-
-
 
   const loginHandler = () => {
     fetch("https://my-todo-app-new-9ccea1147719.herokuapp.com/users/login", {
@@ -71,10 +69,7 @@ function LoginPage() {
         </button>
       </div>
       <div className="moveToRegister">
-        Don’t have an account ?
-        <Link to="/register">
-          Sign Up
-        </Link>
+        Don’t have an account ?<Link to="/register">Sign Up</Link>
       </div>
     </div>
   );
