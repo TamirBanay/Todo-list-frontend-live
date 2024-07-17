@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/TamirBanay/static/css/main.31418666.css",
+    "main.js": "/TamirBanay/static/js/main.9b994bb1.js",
+    "static/js/787.ef22139f.chunk.js": "/TamirBanay/static/js/787.ef22139f.chunk.js",
+    "static/media/profileImg.png": "/TamirBanay/static/media/profileImg.14d1dcfb9d0845491023.png",
+    "static/media/watch-img.png": "/TamirBanay/static/media/watch-img.c6434a16e4327255b963.png",
+    "static/media/Done.png": "/TamirBanay/static/media/Done.6717773e5a17d90e9f50.png",
+    "index.html": "/TamirBanay/index.html",
+    "main.31418666.css.map": "/TamirBanay/static/css/main.31418666.css.map",
+    "main.9b994bb1.js.map": "/TamirBanay/static/js/main.9b994bb1.js.map",
+    "787.ef22139f.chunk.js.map": "/TamirBanay/static/js/787.ef22139f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.31418666.css",
+    "static/js/main.9b994bb1.js"
+  ]
+}
