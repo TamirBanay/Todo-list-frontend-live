@@ -53,7 +53,7 @@ function LoginPage() {
           <input
             onChange={(e) => setUsername(e.target.value)}
             className="login-email"
-            type="email"
+            type="email||username"
             placeholder="Enter your email or username"
             autoComplete="username"
           />
