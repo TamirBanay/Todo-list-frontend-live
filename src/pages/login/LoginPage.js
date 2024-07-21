@@ -4,6 +4,7 @@ import "./login.css";
 import logInImag from "../../images/Done.png";
 import { useRecoilState } from "recoil";
 import { useNavigate, Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
 import { _userIsLoggedIn, _currentUserId, _user } from "../../services/atom";
 function LoginPage() {
@@ -15,6 +16,15 @@ function LoginPage() {
   const navigate = useNavigate();
 
   const loginHandler = () => {
+    if (!username || !password) {
+      Swal.fire({
+        icon: "error",
+        title: "Login Error",
+        text: "Username and password cannot be empty.",
+      });
+      return;
+    }
+
     fetch("https://my-todo-app-new-9ccea1147719.herokuapp.com/users/login", {
       method: "POST",
       headers: {
@@ -27,6 +37,12 @@ function LoginPage() {
     })
       .then((response) => response.json())
       .then((data) => {
+        console.log(data);
+        if (!data.token || !data.payload) {
+          throw new Error(
+            "Authentication failed. Invalid response from server."
+          );
+        }
         localStorage.setItem("token", data.token);
         localStorage.setItem("user", JSON.stringify(data.payload));
         localStorage.setItem("userId", data.payload.id);
@@ -35,6 +51,13 @@ function LoginPage() {
         setUser(data.payload);
         setCurrentUserId(data.payload.id);
         navigate(`/${data.payload.id}/todo`);
+      })
+      .catch((error) => {
+        Swal.fire({
+          icon: "error",
+          title: "Error during login",
+          text: error.message,
+        });
       });
   };
 
