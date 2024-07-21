@@ -57,6 +57,7 @@ function LoginPage() {
           icon: "error",
           title: "Error during login",
           text: error.message,
+          confirmButtonColor: "#d8605b",
         });
       });
   };
